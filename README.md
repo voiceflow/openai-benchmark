@@ -1,5 +1,13 @@
 # Voiceflow OpenAI Benchmark
 
+This repo generates a csv comparing various OpenAI models called via API
+
+example:
+<img width="1205" alt="Screenshot 2023-03-30 at 2 56 18 PM" src="https://user-images.githubusercontent.com/5643574/228936752-2e4312f7-5355-4ea5-8c27-610d0b42c7b4.png">
+
+
+### Setup
+
 Be sure to add a `.env` file into this repo with the following filled out:
 
 ```
