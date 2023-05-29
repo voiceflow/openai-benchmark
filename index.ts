@@ -4,6 +4,7 @@ import fs from "fs";
 
 import { TEST_MESSAGE, ITERATIONS, FILE_NAME, MODELS } from "./config";
 import { ModelCompletionFormat } from "./openai";
+import path from "path";
 
 interface CompletionMetrics {
   time: number;
@@ -65,7 +66,9 @@ const modelMetrics = Object.fromEntries(
   }
 
   // write csv to file
-  fs.writeFileSync(FILE_NAME + ".csv", csv);
+  const filePath = path.join(__dirname, FILE_NAME + ".csv");
+  console.log("writing csv to", filePath);
+  fs.writeFileSync(filePath, csv);
 
   process.exit(0);
 })();

@@ -52,6 +52,14 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.3.tgz#f0b991c32cfc6a4e7f3399d6cb4b8cf9a0315014"
   integrity sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==
 
+"@voiceflow/openai@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/openai/-/openai-3.2.1.tgz#cdd9cd38c0184b87558dbf32873ea930b0670997"
+  integrity sha512-u7WFV1R3vn7/m/cTPYIIjMh2VxPMgr4upN4eO1DK6ElmrAQOYScz08nEJLPNevIOgSey4UB3EZucVTTQuVoLXg==
+  dependencies:
+    axios "^0.26.0"
+    form-data "^4.0.0"
+
 acorn-walk@^8.1.1:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
