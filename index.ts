@@ -22,6 +22,11 @@ const modelMetrics = Object.fromEntries(
     MODELS.map(async (model) => {
       await Promise.all(
         [...Array(ITERATIONS)].map(async (_, index) => {
+          // wait randomly between 0 and 5 seconds
+          await new Promise((resolve) =>
+            setTimeout(resolve, Math.random() * 5000)
+          );
+
           const start = Date.now();
 
           const response = await ModelCompletionFormat[model]({
