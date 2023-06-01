@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import { GPT_MODELS } from "./constants";
+import { MAX_TOKENS } from "./config";
 import {
   OpenAIApi,
   Configuration,
@@ -33,11 +34,9 @@ const anthropic = new Client(process.env.ANTHROPIC_API_KEY!);
 
 const TIMEOUT = 20000;
 
-const LENGTH = 128;
-
 export const createCompletion = async (request: CreateCompletionRequest) => {
   const response = await openai.createCompletion(
-    { ...request, max_tokens: LENGTH },
+    { ...request, max_tokens: MAX_TOKENS },
     { timeout: TIMEOUT }
   );
 
@@ -56,7 +55,7 @@ export const createChatCompletion = async ({
   ];
   const response = await openai
     .createChatCompletion(
-      { ...request, messages, max_tokens: LENGTH },
+      { ...request, messages, max_tokens: MAX_TOKENS },
       { timeout: TIMEOUT }
     )
     .catch((error) => {
@@ -78,7 +77,7 @@ export const azureChatCompletion = async ({
   ];
   const response = await azureOpenai
     .createChatCompletion(
-      { ...request, messages, max_tokens: LENGTH },
+      { ...request, messages, max_tokens: MAX_TOKENS },
       { timeout: TIMEOUT }
     )
     .catch((error) => {
@@ -95,7 +94,7 @@ export const claudeChatCompletion = async ({
   const response = await anthropic.complete({
     prompt: `${HUMAN_PROMPT} ${prompt}${AI_PROMPT}`,
     stop_sequences: [HUMAN_PROMPT],
-    max_tokens_to_sample: LENGTH,
+    max_tokens_to_sample: MAX_TOKENS,
     model,
   });
 

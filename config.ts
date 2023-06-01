@@ -13,8 +13,10 @@ export const MODELS = [
 export const FILE_NAME = "metrics";
 
 // how many to requests to run for each model
-export const ITERATIONS = 20;
+export const ITERATIONS = 10;
+
+export const MAX_TOKENS = 512;
 
 // the actual prompt to send to the API
 export const TEST_MESSAGE =
-  "give me 10 clothing brands and their country of origin in JSON format.";
+  "give me 5 car brands and their country of origin in JSON format.";
